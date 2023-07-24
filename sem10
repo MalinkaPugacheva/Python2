@@ -1,0 +1,37 @@
+Д/З
+Класс принимает тип животного (название одного из созданных классов) и параметры для этого типа.
+Внутри класса создайте экземпляр на основе переданного типа и верните его из класса-фабрики.
+Возьмите 1-3 любые задания из прошлых семинаров (например сериализация данных), которые вы уже решали. 
+Превратите функции в методы класса, а параметры в свойства. Задания должны решаться через вызов методов экземпляра.
+class Animal:
+        return self.__age
+
+
+class Fish(Animal):
+        return self.__color
+
+
+class Mammal(Animal):
+
+    def __init__(self, type, age, wool):
+        super().__init__(type, age)
+        self.__name, self.__age = type, age
+        self.__wool = wool
+
+    def get_specific(self):
+        return self.__wool
+
+
+class Bird(Animal):
+
+    def __init__(self, type, age, feather):
+        super().__init__(type, age)
+        self.__name, self.__age = type, age
+        self.__feather = feather
+
+    def get_specific(self):
+        return self.__feather
+
+if __name__ == '__main__':
+    bird = Bird("Ворон", 2, "черные")
+    print(f'имя птицы: {bird.get_name()}, возраст {bird.get_age()}, оперенье {bird.get_specific()}')
